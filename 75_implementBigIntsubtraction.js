@@ -1,17 +1,8 @@
-/**
- * Subtracts two non-negative integers represented as strings.
- *
- * @param {string} num1 - The minuend as a string (larger or equal number).
- * @param {string} num2 - The subtrahend as a string (smaller or equal number).
- * @returns {string} - The result of num1 - num2 as a string.
- */
 function subtract(num1, num2) {
-  // Helper function to perform string subtraction (num1 - num2)
   const subtractStrings = (a, b) => {
     let carry = 0;
     let result = "";
 
-    // Make both strings the same length by padding with zeros
     b = b.padStart(a.length, "0");
 
     for (let i = a.length - 1; i >= 0; i--) {
@@ -27,11 +18,9 @@ function subtract(num1, num2) {
       }
     }
 
-    // Remove leading zeros
     return result.replace(/^0+(?!$)/, "");
   };
 
-  // Ensure num1 is always larger or equal to num2
   if (
     num1.length < num2.length ||
     (num1.length === num2.length && num1 < num2)
